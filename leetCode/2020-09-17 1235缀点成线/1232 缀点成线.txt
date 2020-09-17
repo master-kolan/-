@@ -1,0 +1,10 @@
+var checkStraightLine = function(coordinates) {
+    if (coordinates.length < 3) return true;
+    let tmpCoords = [coordinates[1][0] - coordinates[0][0],coordinates[1][1] - coordinates[0][1]];
+    for (let i = 2; i < coordinates.length; i++) {
+        if ((coordinates[i][0] - coordinates[0][0]) * tmpCoords[1] 
+        	!== (coordinates[i][1] - coordinates[0][1]) * tmpCoords[0])          
+            		return false;
+    }
+    return true;
+};
